@@ -1,0 +1,15 @@
+.veiculo-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.veiculo-btn img {
+	height: 48px;
+	display: block;
+}
+
+.veiculo_icon_form {
+	height: 36px;
+}
