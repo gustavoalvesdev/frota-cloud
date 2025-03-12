@@ -17,7 +17,30 @@ class veiculosController extends controller {
 
 	public function cadastrarPost() {
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-			echo 'OPA';
+			
+			$tipo = addslashes($_POST['tipo']);
+			$marca = addslashes($_POST['marca']);
+			$modelo = addslashes($_POST['modelo']);
+			$ano = addslashes($_POST['ano']);
+			$peso = addslashes($_POST['peso']);
+			$eixos = addslashes($_POST['eixos']);
+			$chassi = addslashes($_POST['chassi']);
+			$cor = addslashes($_POST['cor']);
+			$p_licenciamento = addslashes($_POST['p_licenciamento']);
+			$u_licenciamento = addslashes($_POST['u_licenciamento']);
+
+			$veiculo = new Veiculo();
+			if($veiculo->cadastrar($tipo, $marca, $modelo, $ano, $peso, $eixos, $chassi, $cor, $p_licenciamento, $u_licenciamento)) {
+				$_SESSION['msg_type'] = 'success';
+				$_SESSION['msg'] = 'Veículo cadastrado com sucesso!';
+			} else {
+				$_SESSION['msg_type'] = 'danger';
+				$_SESSION['msg'] = 'Falta ao cadastrar veículo!';
+			}
+
+			header('Location: ' . BASE_URL . 'veiculos/cadastrar');
+			exit;
+
 		} else {
 			die('Requisição Inválida! Permitido apenas POST');
 		}

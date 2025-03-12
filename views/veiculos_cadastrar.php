@@ -5,12 +5,25 @@
 	</header>
 	<!-- jumbotron -->
 
+	<?php if (isset($_SESSION['msg_type']) && isset($_SESSION['msg'])): ?>
+
+		<div class="alert alert-<?= $_SESSION['msg_type'] ?> alert-dismissible fade in" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<strong><?= ($_SESSION['msg_type'] == 'success') ? 'Ótimo!' : 'Atenção!' ?></strong>
+			<?= $_SESSION['msg'] ?>
+			<?php unset($_SESSION['msg']); unset($_SESSION['msg_type']); ?>
+		</div>
+
+	<?php endif; ?>
+
 	<form method="POST" action="<?= BASE_URL ?>veiculos/cadastrarPost">
 		<div class="row">
 			<div class="col-md-3">
 				<div class="form-group">
-					<label for="tipo_veiculo">Tipo de Veículo:</label>
-					<select name="tipo_veiculo" id="tipo_veiculo" class="form-control">
+					<label for="tipo">Tipo de Veículo:</label>
+					<select name="tipo" id="tipo" class="form-control">
 						<option value="1">CAMINHÃO</option>
 						<option value="2">CAMIONETE</option>
 						<option value="3">CARRO</option>
@@ -38,7 +51,7 @@
 			<div class="col-md-4">
 				<div class="form-group">
 					<label for="modelo">Modelo:</label>
-					<input type="text" name="modelo" id="modelo" class="form-control">
+					<input type="text" name="modelo" id="modelo" class="form-control" maxlength="50">
 					<!-- modelo -->
 				</div>
 				<!-- form-group -->
@@ -84,7 +97,7 @@
 			<div class="col-md-5">
 				<div class="form-group">
 					<label for="chassi">Número do Chassi:</label>
-					<input type="text" name="chassi" id="chassi" class="form-control">
+					<input type="text" name="chassi" id="chassi" class="form-control" maxlength="30">
 					<!-- chassi -->
 				</div>
 				<!-- form-group -->
@@ -96,7 +109,7 @@
 			<div class="col-md-4">
 				<div class="form-group">
 					<label for="cor">Cor:</label>
-					<input type="text" name="cor" id="cor" class="form-control">
+					<input type="text" name="cor" id="cor" class="form-control" maxlength="30">
 					<!-- cor -->
 				</div>
 				<!-- form-group -->
