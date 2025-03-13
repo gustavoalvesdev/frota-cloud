@@ -35,7 +35,7 @@ class veiculosController extends controller {
 				$_SESSION['msg'] = 'Veículo cadastrado com sucesso!';
 			} else {
 				$_SESSION['msg_type'] = 'danger';
-				$_SESSION['msg'] = 'Falta ao cadastrar veículo!';
+				$_SESSION['msg'] = 'Falha ao cadastrar veículo!';
 			}
 
 			header('Location: ' . BASE_URL . 'veiculos/cadastrar');

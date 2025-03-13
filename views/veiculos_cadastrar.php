@@ -57,6 +57,12 @@
 				<!-- form-group -->
 			</div>
 			<!-- col-md-4 -->
+			<div class="col-md-2">
+				<div class="form-group">
+					<label for="placa">Placa:</label>
+					<input type="text" name="placa" id="placa" class="form-control" maxlength="10">
+				</div>
+			</div>
 		</div>
 		<!-- row -->
 		<div class="row">
