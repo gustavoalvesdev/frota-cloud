@@ -21,7 +21,9 @@ class veiculosController extends controller {
 			$tipo = addslashes($_POST['tipo']);
 			$marca = addslashes($_POST['marca']);
 			$modelo = addslashes($_POST['modelo']);
+			$placa = addslashes($_POST['placa']);
 			$ano = addslashes($_POST['ano']);
+			$renavam = addslashes($_POST['renavam']);
 			$peso = addslashes($_POST['peso']);
 			$eixos = addslashes($_POST['eixos']);
 			$chassi = addslashes($_POST['chassi']);
@@ -30,7 +32,7 @@ class veiculosController extends controller {
 			$u_licenciamento = addslashes($_POST['u_licenciamento']);
 
 			$veiculo = new Veiculo();
-			if($veiculo->cadastrar($tipo, $marca, $modelo, $ano, $peso, $eixos, $chassi, $cor, $p_licenciamento, $u_licenciamento)) {
+			if($veiculo->cadastrar($tipo, $marca, $modelo, $placa, $ano, $renavam, $peso, $eixos, $chassi, $cor, $p_licenciamento, $u_licenciamento)) {
 				$_SESSION['msg_type'] = 'success';
 				$_SESSION['msg'] = 'Veículo cadastrado com sucesso!';
 			} else {

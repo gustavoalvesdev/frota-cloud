@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13/03/2025 às 03:29
+-- Tempo de geração: 13/03/2025 às 16:38
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -55,7 +55,9 @@ CREATE TABLE `tbl_veiculos` (
   `tipo` int(11) NOT NULL,
   `marca` int(11) NOT NULL,
   `modelo` varchar(50) NOT NULL,
+  `placa` varchar(8) NOT NULL,
   `ano` int(4) NOT NULL,
+  `renavam` varchar(15) NOT NULL,
   `peso` int(11) NOT NULL,
   `eixos` int(2) NOT NULL,
   `chassi` varchar(30) NOT NULL,
@@ -68,9 +70,10 @@ CREATE TABLE `tbl_veiculos` (
 -- Despejando dados para a tabela `tbl_veiculos`
 --
 
-INSERT INTO `tbl_veiculos` (`id`, `tipo`, `marca`, `modelo`, `ano`, `peso`, `eixos`, `chassi`, `cor`, `p_licenciamento`, `u_licenciamento`) VALUES
-(4, 2, 3, 'FRS-2048 II', 2015, 32000, 3, '3SFE5352LFDFS', 'BRANCA', '2015-06-16', '2025-01-15'),
-(6, 1, 1, 'FRS-2048 II', 1940, 32000, 3, '3SFE5352LFDFS', 'AZUL', '2025-03-07', '2025-03-12');
+INSERT INTO `tbl_veiculos` (`id`, `tipo`, `marca`, `modelo`, `placa`, `ano`, `renavam`, `peso`, `eixos`, `chassi`, `cor`, `p_licenciamento`, `u_licenciamento`) VALUES
+(4, 2, 3, 'FRS-2048 II', '', 2015, '0', 32000, 3, '3SFE5352LFDFS', 'BRANCA', '2015-06-16', '2025-01-15'),
+(6, 1, 1, 'FRS-2048 II', '', 1940, '0', 32000, 3, '3SFE5352LFDFS', 'AZUL', '2025-03-07', '2025-03-12'),
+(7, 3, 2, '6x2 R124', 'ABC-1234', 1998, '12345678910', 16, 3, '10987654321', 'BRANCA', '1998-12-12', '2024-12-12');
 
 --
 -- Índices para tabelas despejadas
@@ -102,7 +105,7 @@ ALTER TABLE `tbl_motoristas`
 -- AUTO_INCREMENT de tabela `tbl_veiculos`
 --
 ALTER TABLE `tbl_veiculos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

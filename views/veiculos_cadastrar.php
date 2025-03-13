@@ -48,7 +48,7 @@
 				<!-- form-group -->
 			</div>
 			<!-- col-md-3 -->
-			<div class="col-md-4">
+			<div class="col-md-3">
 				<div class="form-group">
 					<label for="modelo">Modelo:</label>
 					<input type="text" name="modelo" id="modelo" class="form-control" maxlength="50">
@@ -56,17 +56,18 @@
 				</div>
 				<!-- form-group -->
 			</div>
-			<!-- col-md-4 -->
-			<div class="col-md-2">
+			<!-- col-md-3 -->
+			<div class="col-md-3">
 				<div class="form-group">
 					<label for="placa">Placa:</label>
 					<input type="text" name="placa" id="placa" class="form-control" maxlength="10">
 				</div>
 			</div>
+			<!-- col-md-3 -->
 		</div>
 		<!-- row -->
 		<div class="row">
-			<div class="col-md-2">
+			<div class="col-md-3">
 				<div class="form-group">
 					<label for="ano">Ano:</label>
 					<select name="ano" id="ano" class="form-control">
@@ -81,7 +82,16 @@
 				</div>
 				<!-- form-group -->
 			</div>
-			<!-- col-md-2 -->
+			<!-- col-md-3 -->
+			<div class="col-md-3">
+				<div class="form-group">
+					<label for="renavam">RENAVAM:</label>
+					<input type="number" name="renavam" id="renavam" class="form-control" maxlength="11">
+					<!-- eixos -->
+				</div>
+				<!-- form-group -->
+			</div>
+			<!-- col-md-3 -->
 			<div class="col-md-3">
 				<div class="form-group">
 					<label for="peso">Peso:</label><br>
@@ -91,7 +101,7 @@
 				<!-- form-group -->
 			</div>
 			<!-- col-md-3 -->
-			<div class="col-md-2">
+			<div class="col-md-3">
 				<div class="form-group">
 					<label for="eixos">Número de Eixos:</label>
 					<input type="number" name="eixos" id="eixos" class="form-control">
@@ -99,8 +109,12 @@
 				</div>
 				<!-- form-group -->
 			</div>
-			<!-- col-md-2 -->
-			<div class="col-md-5">
+			<!-- col-md-3 -->
+			
+		</div>
+		<!-- row -->
+		<div class="row">
+			<div class="col-md-3">
 				<div class="form-group">
 					<label for="chassi">Número do Chassi:</label>
 					<input type="text" name="chassi" id="chassi" class="form-control" maxlength="30">
@@ -109,10 +123,7 @@
 				<!-- form-group -->
 			</div>
 			<!-- col-md-5 -->
-		</div>
-		<!-- row -->
-		<div class="row">
-			<div class="col-md-4">
+			<div class="col-md-3">
 				<div class="form-group">
 					<label for="cor">Cor:</label>
 					<input type="text" name="cor" id="cor" class="form-control" maxlength="30">
