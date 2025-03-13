@@ -5,6 +5,11 @@ class veiculosController extends controller {
 
 		$dados = [];
 
+		$veiculo = new Veiculo();
+
+
+		$dados['veiculos'] = $veiculo->listarTodos();
+
 		$this->loadTemplate('veiculos', $dados);
 
 	}
@@ -32,7 +37,7 @@ class veiculosController extends controller {
 			$u_licenciamento = addslashes($_POST['u_licenciamento']);
 
 			$veiculo = new Veiculo();
-			if($veiculo->cadastrar($tipo, $marca, $modelo, $placa, $ano, $renavam, $peso, $eixos, $chassi, $cor, $p_licenciamento, $u_licenciamento)) {
+			if($veiculo->cadastrar($tipo, $marca, $modelo, $placa, $ano, $renavam,	 $peso, $eixos, $chassi, $cor, $p_licenciamento, $u_licenciamento)) {
 				$_SESSION['msg_type'] = 'success';
 				$_SESSION['msg'] = 'Veículo cadastrado com sucesso!';
 			} else {

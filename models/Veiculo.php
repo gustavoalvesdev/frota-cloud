@@ -24,4 +24,20 @@ class Veiculo extends model {
 
 	}
 
+	public function listarTodos() {
+
+		$veiculos = [];
+
+		$sql = "SELECT * FROM tbl_veiculos";
+		$sql = $this->db->prepare($sql);
+		$sql->execute();
+
+		if ($sql->rowCount() > 0) {
+			$veiculos = $sql->fetchAll();
+		}	
+
+		return $veiculos;
+
+	}
+
 }
