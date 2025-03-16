@@ -45,13 +45,25 @@
 			<tbody>
 				<?php foreach($veiculos as $veiculo): ?>
 					<tr>
-						<td><?= $veiculo['tipo'] ?></td>
-						<td><?= $veiculo['marca'] ?></td>
+						<?php 
+
+							$v = new Veiculo();
+							$tipo = $v->buscaTipoVeiculo($veiculo['tipo']);
+
+						?>
+						<td><?= $tipo['tipo'] ?></td>
+						<?php 
+
+							$v = new Veiculo();
+							$marca = $v->buscaMarca($veiculo['marca']);
+
+						?>
+						<td><?= $marca['nome'] ?></td>
 						<td><?= $veiculo['modelo'] ?></td>
 						<td><?= $veiculo['placa'] ?></td>
 						<td><?= $veiculo['ano'] ?></td>
 						<td><?= $veiculo['renavam'] ?></td>
-						<td><?= $veiculo['peso'] ?></td>
+						<td><?= $veiculo['peso'] ?> ton.</td>
 						<td><?= $veiculo['eixos'] ?></td>
 						<td><?= $veiculo['chassi'] ?></td>
 						<td><?= $veiculo['cor'] ?></td>

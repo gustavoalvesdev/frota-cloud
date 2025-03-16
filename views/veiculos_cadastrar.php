@@ -95,7 +95,7 @@
 			<div class="col-md-3">
 				<div class="form-group">
 					<label for="peso">Peso:</label><br>
-					<input type="number" name="peso" id="peso" class="form-control" placeholder="Peso em toneladas">
+					<input type="number" name="peso" id="peso" class="form-control" placeholder="Peso em toneladas" step="0.1">
 					<!-- peso -->
 				</div>
 				<!-- form-group -->

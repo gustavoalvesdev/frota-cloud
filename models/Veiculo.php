@@ -40,4 +40,40 @@ class Veiculo extends model {
 
 	}
 
+	public function buscaTipoVeiculo($id) {
+
+		$tipo = [];
+
+		$sql = "SELECT * FROM tbl_tipos_veiculo WHERE  id = :id";
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(':id', $id);
+
+		$sql->execute();
+
+		if ($sql->rowCount() > 0) {
+			$tipo = $sql->fetch();
+		}
+
+		return $tipo;
+
+	}
+
+	public function buscaMarca($id) {
+
+		$marca = [];
+
+		$sql = "SELECT * FROM tbl_marcas WHERE  id = :id";
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(':id', $id);
+
+		$sql->execute();
+
+		if ($sql->rowCount() > 0) {
+			$marca = $sql->fetch();
+		}
+
+		return $marca;
+
+	}
+
 }
