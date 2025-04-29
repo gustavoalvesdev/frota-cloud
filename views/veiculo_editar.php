@@ -19,6 +19,7 @@
 	<?php endif; ?>
 
 	<form method="POST" action="<?= BASE_URL ?>veiculos/editarPost">
+		<input type="hidden" name="id" value="<?= $veiculo['id'] ?>">
 		<div class="row">
 			<div class="col-md-3">
 				<div class="form-group">

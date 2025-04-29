@@ -29,4 +29,22 @@ class Marca extends model {
 
 	}
 
+	public function buscaMarca($id) {
+
+		$marca = [];
+
+		$sql = "SELECT * FROM tbl_marcas WHERE  id = :id";
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(':id', $id);
+
+		$sql->execute();
+
+		if ($sql->rowCount() > 0) {
+			$marca = $sql->fetch();
+		}
+
+		return $marca;
+
+	}
+
 }

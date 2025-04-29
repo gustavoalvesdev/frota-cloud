@@ -47,15 +47,15 @@
 					<tr>
 						<?php 
 
-							$v = new Veiculo();
-							$tipo = $v->buscaTipoVeiculo($veiculo['tipo']);
+							$t = new Tipo();
+							$tipo = $t->buscar($veiculo['tipo']);
 
 						?>
 						<td><?= $tipo['tipo'] ?></td>
 						<?php 
 
-							$v = new Veiculo();
-							$marca = $v->buscaMarca($veiculo['marca']);
+							$m = new Marca();
+							$marca = $m->buscaMarca($veiculo['marca']);
 
 						?>
 						<td><?= $marca['nome'] ?></td>
@@ -77,15 +77,18 @@
 		<!-- table table-striped table-bordered -->
 	</div>
 	<!-- table-responsive -->
-
+	
+	<?php if(isset($paginas) && $paginas > 1): ?>
 	<ul class="pagination">
-		<li class="active"><a href="#">1</a></li>
-		<!-- active -->
-		<li><a href="#">2</a></li>
-		<li><a href="#">3</a></li>
-		<li><a href="#">4</a></li>
-		<li><a href="#">5</a></li>
+		<?php for($i = 1; $i <= $paginas; $i++): ?>
+			<?php if($i == $pagina_atual): ?>
+				<li class="active"><a href="<?= BASE_URL ?>veiculos/index/<?= $i ?>"><?= $i ?></a></li>
+			<?php else: ?>
+				<li><a href="<?= BASE_URL ?>veiculos/index/<?= $i ?>"><?= $i ?></a></li>
+			<?php endif; ?>
+		<?php endfor; ?>
 	</ul>
 	<!-- pagination -->
 </div>
 <!-- container -->
+<?php endif; ?>

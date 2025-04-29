@@ -29,4 +29,17 @@ class Tipo extends model {
 
 	}
 
+	public function buscar($id) {
+
+		$tipo = [];
+
+		$sql = "SELECT * FROM tbl_tipos_veiculo WHERE id = :id";
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(':id', $id);
+		$sql->execute();
+
+		return $sql->fetch();
+
+	}
+
 }
