@@ -1,6 +1,6 @@
 <div class="container">
 	<header class="jumbotron">
-		<h1 class="text-center">CADASTRAR VEÍCULO</h1>
+		<h1 class="text-center">EDITAR VEÍCULO</h1>
 		<!-- text-center -->
 	</header>
 	<!-- jumbotron -->
@@ -18,14 +18,14 @@
 
 	<?php endif; ?>
 
-	<form method="POST" action="<?= BASE_URL ?>veiculos/cadastrarPost">
+	<form method="POST" action="<?= BASE_URL ?>veiculos/editarPost">
 		<div class="row">
 			<div class="col-md-3">
 				<div class="form-group">
 					<label for="tipo">Tipo de Veículo:</label>
 					<select name="tipo" id="tipo" class="form-control">
 						<?php foreach($tipos as $tipo): ?>
-							<option value="<?= $tipo['id'] ?>"><?= $tipo['tipo'] ?></option>
+							<option value="<?= $tipo['id'] ?>" <?php if($veiculo['tipo'] == $tipo['id']) echo 'selected'; ?>><?= $tipo['tipo'] ?></option>
 						<?php endforeach; ?>
 					</select>
 					<!-- tipo_veiculo -->
@@ -37,9 +37,9 @@
 				<div class="form-group">
 					<label for="marca">Marca:</label>
 					<select name="marca" id="marca" class="form-control">
-					<?php foreach($marcas as $marca): ?>
-						<option value="<?= $marca['id'] ?>"><?= $marca['nome'] ?></option>
-					<?php endforeach; ?>
+						<?php foreach($marcas as $marca): ?>
+							<option value="<?= $marca['id'] ?>" <?php if($veiculo['marca'] == $marca['id']) echo 'selected'; ?>><?= $marca['nome'] ?></option>
+						<?php endforeach; ?>
 					</select>
 					<!-- marca -->
 				</div>
@@ -49,7 +49,7 @@
 			<div class="col-md-3">
 				<div class="form-group">
 					<label for="modelo">Modelo:</label>
-					<input type="text" name="modelo" id="modelo" class="form-control" maxlength="50">
+					<input type="text" name="modelo" id="modelo" class="form-control" value="<?= $veiculo['modelo'] ?>" maxlength="50">
 					<!-- modelo -->
 				</div>
 				<!-- form-group -->
@@ -58,7 +58,7 @@
 			<div class="col-md-3">
 				<div class="form-group">
 					<label for="placa">Placa:</label>
-					<input type="text" name="placa" id="placa" class="form-control" maxlength="10">
+					<input type="text" name="placa" id="placa" class="form-control" value="<?= $veiculo['placa'] ?>" maxlength="10">
 				</div>
 			</div>
 			<!-- col-md-3 -->
@@ -73,7 +73,7 @@
 							$anoAtual = date('Y');
 							for ($i = 1900; $i <= $anoAtual + 1; $i++):
 						?>
-							<option value="<?= $i ?>"><?= $i ?></option>
+							<option value="<?= $i ?>" <?php if($veiculo['ano'] == $i) echo 'selected'; ?>><?= $i ?></option>
 						<?php endfor; ?>
 					</select>
 					<!-- ano -->
@@ -84,7 +84,7 @@
 			<div class="col-md-3">
 				<div class="form-group">
 					<label for="renavam">RENAVAM:</label>
-					<input type="number" name="renavam" id="renavam" class="form-control" maxlength="11">
+					<input type="number" name="renavam" id="renavam" class="form-control" value="<?= $veiculo['renavam'] ?>" maxlength="11">
 					<!-- eixos -->
 				</div>
 				<!-- form-group -->
@@ -93,7 +93,7 @@
 			<div class="col-md-3">
 				<div class="form-group">
 					<label for="peso">Peso:</label><br>
-					<input type="number" name="peso" id="peso" class="form-control" placeholder="Peso em toneladas" step="0.1">
+					<input type="number" name="peso" id="peso" class="form-control" placeholder="Peso em toneladas" step="0.1" value="<?= $veiculo['peso'] ?>">
 					<!-- peso -->
 				</div>
 				<!-- form-group -->
@@ -102,7 +102,7 @@
 			<div class="col-md-3">
 				<div class="form-group">
 					<label for="eixos">Número de Eixos:</label>
-					<input type="number" name="eixos" id="eixos" class="form-control">
+					<input type="number" name="eixos" id="eixos" class="form-control" value="<?= $veiculo['eixos'] ?>">
 					<!-- eixos -->
 				</div>
 				<!-- form-group -->
@@ -115,7 +115,7 @@
 			<div class="col-md-3">
 				<div class="form-group">
 					<label for="chassi">Número do Chassi:</label>
-					<input type="text" name="chassi" id="chassi" class="form-control" maxlength="30">
+					<input type="text" name="chassi" id="chassi" class="form-control" value="<?= $veiculo['chassi'] ?>" maxlength="30">
 					<!-- chassi -->
 				</div>
 				<!-- form-group -->
@@ -124,7 +124,7 @@
 			<div class="col-md-3">
 				<div class="form-group">
 					<label for="cor">Cor:</label>
-					<input type="text" name="cor" id="cor" class="form-control" maxlength="30">
+					<input type="text" name="cor" id="cor" class="form-control" value="<?= $veiculo['cor'] ?>" maxlength="30">
 					<!-- cor -->
 				</div>
 				<!-- form-group -->
@@ -134,7 +134,7 @@
 			<div class="col-md-3">
 				<div class="form-group">
 					<label for="p_licenciamento">Primeiro Licenciamento:</label>
-					<input type="date" name="p_licenciamento" id="p_licenciamento" class="form-control">
+					<input type="date" name="p_licenciamento" id="p_licenciamento" class="form-control" value="<?= $veiculo['p_licenciamento'] ?>">
 					<!-- p_licenciamento -->
 				</div>
 				<!-- form-group -->
@@ -144,7 +144,7 @@
 			<div class="col-md-3">
 				<div class="form-group">
 					<label for="p_licenciamento">Último Licenciamento:</label>
-					<input type="date" name="u_licenciamento" id="u_licenciamento" class="form-control">
+					<input type="date" name="u_licenciamento" id="u_licenciamento" class="form-control" value="<?= $veiculo['u_licenciamento'] ?>">
 					<!-- u_licenciamento -->
 				</div>
 				<!-- form-group -->
@@ -157,7 +157,7 @@
 			
 				<button type="submit" role="button" name="cadastrar_veiculo" id="cadastrar_veiculo" class="btn btn-success btn-lg">
 					<img src="<?= BASE_URL ?>assets/images/veiculo-icon.png" class="veiculo_icon_form">&nbsp;
-					Cadastrar Veículo
+					Editar Veículo
 				</button>
 				<!-- cadastrar_veiculo -->
 				&nbsp;&nbsp;

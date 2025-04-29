@@ -40,6 +40,23 @@ class Veiculo extends model {
 
 	}
 
+	public function buscar($id) {
+
+		$veiculo = [];
+
+		$sql = "SELECT * FROM tbl_veiculos WHERE id = :id";
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(':id', $id);
+		$sql->execute();
+
+		if ($sql->rowCount() > 0) {
+			$veiculo = $sql->fetch();
+		}
+
+		return $veiculo;
+
+	}
+
 	public function buscaTipoVeiculo($id) {
 
 		$tipo = [];

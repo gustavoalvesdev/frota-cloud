@@ -69,7 +69,7 @@
 						<td><?= $veiculo['cor'] ?></td>
 						<td><?= $veiculo['p_licenciamento'] ?></td>
 						<td><?= $veiculo['u_licenciamento'] ?></td>
-						<td style="display: flex; gap: 10px;"><a href="#" class="btn btn-warning">Editar</a><a href="#" class="btn btn-danger">Excluir</a></td>
+						<td style="display: flex; gap: 10px;"><a href="<?= BASE_URL ?>veiculos/editar/<?= $veiculo['id'] ?>" class="btn btn-warning">Editar</a><a href="#" class="btn btn-danger">Excluir</a></td>
 					</tr>
 				<?php endforeach; ?>
 			</tbody>

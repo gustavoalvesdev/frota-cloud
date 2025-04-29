@@ -17,6 +17,12 @@ class veiculosController extends controller {
 	public function cadastrar() {
 		$dados = [];
 
+		$marcas = new Marca();
+		$tipos = new Tipo();
+
+		$dados['marcas'] = $marcas->listarTodas();
+		$dados['tipos'] = $tipos->listarTodos();
+
 		$this->loadTemplate('veiculos_cadastrar', $dados);
 	}
 
@@ -51,6 +57,19 @@ class veiculosController extends controller {
 		} else {
 			die('Requisição Inválida! Permitido apenas POST');
 		}
+	}
+
+	public function editar($id) {
+		$dados = [];
+		$veiculos = new Veiculo();
+		$tipos = new Tipo();
+		$marcas = new Marca();
+
+		$dados['veiculo'] = $veiculos->buscar($id);
+		$dados['tipos'] = $tipos->listarTodos();
+		$dados['marcas'] = $marcas->listarTodas();
+
+		$this->loadTemplate('veiculo_editar', $dados);
 	}
 
 }

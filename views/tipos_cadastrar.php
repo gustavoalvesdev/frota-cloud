@@ -44,7 +44,7 @@
 					<img src="<?= BASE_URL ?>assets/images/back-icon.png" class="veiculo_icon_form">&nbsp;
 					Voltar
 				</a>
-				<!-- btn btn-secondary -->
+				<!-- btn btn-secondary -->	
 			</div>
 			<!-- col-md-6 -->
 		
