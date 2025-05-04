@@ -1,4 +1,4 @@
-# 🚗 Frota Cloud - Sistema de Controle de Frotsa
+# 🚗 Frota Cloud - Sistema de Controle de Frotas
 
 Este é um projeto pessoal desenvolvido com PHP e MySQL, utilizando o framework StruktPHP, com foco em gerenciamento de veículos de um frota
 
