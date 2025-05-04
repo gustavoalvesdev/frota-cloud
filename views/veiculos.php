@@ -1,7 +1,8 @@
 <div class="container">
-	<div class="jumbotron">
-		<h2 class="text-center">TODOS OS VEÍCULOS</h2>
+	<div class="jumbotron text-center">
+		<h2>TODOS OS VEÍCULOS</h2>
 		<!-- text-center -->
+		<a href="<?= BASE_URL ?>veiculos/cadastrar" role="button" class="btn btn-success btn-lg">Cadastrar Veículo</a>
 	</div>
 	<!-- jumbotron -->
 
